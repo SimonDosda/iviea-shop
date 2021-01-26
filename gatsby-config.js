@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const { itemLine } = require("./src/templates/snipcart")
+
 module.exports = {
   siteMetadata: {
     title: `Ivie A.`,
@@ -33,6 +35,7 @@ module.exports = {
       options: {
         apiKey: process.env.SNIPCART_API_KEY,
         currency: "eur",
+        templates: itemLine,
       },
     },
     // {

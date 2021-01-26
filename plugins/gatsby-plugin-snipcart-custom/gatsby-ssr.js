@@ -8,7 +8,7 @@ exports.onRenderBody = (
   { setHeadComponents, setPostBodyComponents },
   {
     version = "3.0.28",
-    templatesUrl = null,
+    templates = "",
     openCartStyle = "side",
     apiKey = null,
     currency = "usd",
@@ -37,7 +37,7 @@ exports.onRenderBody = (
       data-currency={currency}
       data-config-modal-style={openCartStyle}
       data-api-key={apiKey}
-      snipcart-tempates-url={templatesUrl}
+      dangerouslySetInnerHTML={{ __html: templates }}
     ></div>,
   ])
 }
