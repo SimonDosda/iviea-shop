@@ -54,7 +54,7 @@ const ArticlesStyled = styled.div`
     margin-top: 0.5em;
     padding: 1em;
     text-align: center;
-    background-color: var(--medium);
+    background-color: var(--primary);
     color: white;
     opacity: 70%;
     &:hover {

@@ -1,23 +1,46 @@
 import React, { useContext } from "react"
-import { SnipcartContext } from "gatsby-plugin-snipcart-advanced/context"
+
+import ShoppingBag from "../assets/icons/basket.svg"
+import User from "../assets/icons/user.svg"
+import styled from "styled-components"
+import SnipcartContext from "../../plugins/gatsby-plugin-snipcart-custom/context"
+
+const Button = styled.button`
+  background: none;
+  border: none;
+  position: relative;
+  fill: var(--header);
+  color: var(--header);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .items-count {
+    position: absolute;
+    top: 14px;
+    left: 24px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+`
 
 const Cart = () => {
-  const { state } = useContext(SnipcartContext)
-  const { userStatus, cartQuantity, cartTotal } = state
+  const { cart } = useContext(SnipcartContext)
   return (
     <div>
-      {userStatus === "SignedOut" ? (
-        <button className="snipcart-customer-signin">
-          <span>Se connecter</span>
-        </button>
-      ) : (
-        <button className="snipcart-customer-signin">
-          <span>Mon compte</span>
-        </button>
-      )}
-      <button className="snipcart-checkout">
-        <span>{cartTotal}$</span> (<span>{cartQuantity}</span>)
-      </button>
+      <Button className="snipcart-customer-signin">
+        <User className="icon" />
+      </Button>
+      <Button className="snipcart-checkout">
+        <ShoppingBag className="icon" />
+        <div className="items-count">{cart?.items?.count}</div>
+      </Button>
     </div>
   )
 }

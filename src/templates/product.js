@@ -36,7 +36,7 @@ export default function Product({ data: { product } }) {
         <div className="info">
           <h2>{product.name}</h2>
           <ul>
-            {product.variant.map(variant => (
+            {product.variants.map(variant => (
               <li key={variant.name}>
                 {variant.name}: {variant.retailPrice} {"euros "}
                 <button
@@ -81,7 +81,7 @@ export const query = graphql`
           html
         }
       }
-      variant {
+      variants {
         name
         sku
         retailPrice

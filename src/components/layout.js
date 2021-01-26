@@ -12,10 +12,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "normalize.css"
 import { GlobalStyles } from "../styles/global-styles"
+import { SnipcartStyles } from "../styles/snipcart"
 import { Typography } from "../styles/typography"
 import styled from "styled-components"
 import Footer from "./footer"
-import Cart from "./cart"
 
 const Page = styled.div`
   min-height: 100vh;
@@ -44,8 +44,8 @@ const Layout = ({ children }) => {
   return (
     <Page>
       <GlobalStyles />
+      <SnipcartStyles />
       <Typography />
-      <Cart />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{children}</main>
       <Footer />

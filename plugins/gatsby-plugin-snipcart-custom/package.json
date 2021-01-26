@@ -1,0 +1,17 @@
+{
+    "name": "gatsby-plugin-snipcart-custom",
+    "version": "1.0.0",
+    "description": "A minimal integration of snipcart to Gatsby",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "echo \"No build script setup\""
+    },
+    "keywords": [
+        "gatsby",
+        "gatsby-plugin",
+        "snipcart"
+    ],
+    "author": "Simon Dosda <sdosda@gmail.com>",
+    "license": "0BSD"
+}

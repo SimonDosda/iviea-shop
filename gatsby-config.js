@@ -12,6 +12,14 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         host: process.env.CONTENTFUL_HOST,
@@ -21,10 +29,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-snipcart-advanced`,
+      resolve: `gatsby-plugin-snipcart-custom`,
       options: {
-        publicApiKey: process.env.SNIPCART_API_KEY,
-        openCartOnAdd: false,
+        apiKey: process.env.SNIPCART_API_KEY,
+        currency: "eur",
       },
     },
     // {

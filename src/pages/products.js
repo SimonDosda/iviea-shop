@@ -33,7 +33,7 @@ export default function Products({ data }) {
   const products = data.products.nodes
 
   const getMinPrice = product =>
-    Math.min(...product.variant.map(variant => variant.retailPrice))
+    Math.min(...product.variants.map(variant => variant.retailPrice))
   return (
     <Layout>
       <SEO title="Products" />
@@ -81,7 +81,7 @@ export const query = graphql`
             html
           }
         }
-        variant {
+        variants {
           name
           sku
           retailPrice
