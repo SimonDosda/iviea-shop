@@ -1,27 +1,32 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import Cart from "./cart"
 
 const HeaderStyled = styled.header`
-  background-color: var(--light);
+  display: flex;
+  background-color: var(--dark-background);
   padding: 1em;
-  text-align: center;
 
   .title {
-    font-family: PTSerif;
+    font-family: PTSerif, Roboto, serif;
     font-weight: bold;
     font-size: 2em;
-    color: white;
+    color: var(--header);
+  }
+
+  .spacer {
+    flex: 1;
   }
 `
 
 const Header = ({ siteTitle }) => (
   <HeaderStyled>
-    <span>
-      <Link to="/" className="title">
-        {siteTitle}
-      </Link>
-    </span>
+    <Link to="/" className="title">
+      {siteTitle}
+    </Link>
+    <span className="spacer" />
+    <Cart />
   </HeaderStyled>
 )
 
