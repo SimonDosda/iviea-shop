@@ -43,15 +43,19 @@ const ProductStyles = styled.div`
 `;
 
 export default function Product({ product }) {
+  const parseString = (inputString) => {
+    console.log(inputString);
+    return inputString.replace("&#39;", "'");
+  };
   return (
     <ProductStyles>
       <a href={product.url}>
         <GatsbyImage
           image={getImage(product.childEtsyListingImage.childFile)}
-          alt={product.title}
+          alt={parseString(product.title)}
         />
         <div className="title">
-          <h2>{product.title}</h2>
+          <h2>{parseString(product.title)}</h2>
           <p>From ${product.price}</p>
         </div>
       </a>
