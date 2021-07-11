@@ -1,12 +1,16 @@
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
+import BannerImage from "../assets/images/banner.png";
 
 const HeaderStyled = styled.header`
   display: flex;
   justify-content: center;
   padding: 1em;
-  border-bottom: 2px solid var(--primary-4);
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  /* border-bottom: 2px solid var(--primary-4); */
   .content {
     width: min(100%, 1180px);
     display: flex;
@@ -32,24 +36,39 @@ const HeaderStyled = styled.header`
   }
 
   @media (max-width: 450px) {
+    font-size: 0.8rem;
+    background-color: rgba(255, 255, 255, 0.6);
     .links {
-      display: none;
+      margin-top: 0.8rem;
     }
+  }
+`;
+
+const BannerStyles = styled.div`
+  img {
+    height: min(300px, calc(50vw));
+    width: 100%;
+    object-fit: cover;
   }
 `;
 
 export default function Header() {
   return (
-    <HeaderStyled>
-      <div className="content">
-        <div className="logo">
-          <Link to="/">Ivie A.</Link>
+    <>
+      <HeaderStyled>
+        <div className="content">
+          <div className="logo">
+            <Link to="/">Ivie A.</Link>
+          </div>
+          <div className="links">
+            <Link to="/wall-art">Wall Art</Link>
+            <a href="https://www.etsy.com/shop/IvieA">Shop</a>
+          </div>
         </div>
-        <div className="links">
-          <Link to="/wall-art">Wall Art</Link>
-          <a href="https://www.etsy.com/shop/IvieA">Shop</a>
-        </div>
-      </div>
-    </HeaderStyled>
+      </HeaderStyled>
+      <BannerStyles>
+        <img src={BannerImage} alt="" />
+      </BannerStyles>
+    </>
   );
 }
