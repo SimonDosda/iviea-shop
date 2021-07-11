@@ -4,7 +4,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const ProductStyles = styled.div`
   position: relative;
-  flex: 1 0 300px;
 
   a:hover {
     color: var(--primary-4);

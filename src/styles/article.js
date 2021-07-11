@@ -6,7 +6,7 @@ export const ArticleStyles = styled.div`
 
   img {
     flex: 1;
-    max-width: 400px;
+    max-width: min(100%, 400px);
     object-fit: cover;
   }
 
