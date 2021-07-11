@@ -4,13 +4,14 @@ import Layout from "../components/layout";
 import Product from "../components/product";
 import SEO from "../components/seo";
 import { ProductsStyles } from "../styles/products";
+import { SectionTitle } from "../styles/title";
 
 const WallArtPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Wall Art" />
       <section>
-        <h2>Wall Art</h2>
+        <SectionTitle>Wall Art</SectionTitle>
         <ProductsStyles>
           {data.allEtsyListing.nodes.map((item) => (
             <Product product={item} key={item.id} />

@@ -13,9 +13,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <section>
-        <SectionTitle>
-          <span>Wall Art</span>
-        </SectionTitle>
+        <SectionTitle>Wall Art</SectionTitle>
         <ProductsStyles>
           {data.allEtsyListing.nodes.map((item) => (
             <Product product={item} key={item.id} />
