@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 export const ArticleStyles = styled.div`
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 
-  img {
+  .feature-image {
     flex: 1;
-    max-width: min(100%, 400px);
-    object-fit: cover;
   }
 
+  .logo {
+    max-width: min(100%, 300px);
+  }
   .body {
     flex: 1;
     padding: 20px;
@@ -48,5 +50,9 @@ export const ArticleStyles = styled.div`
     content: "”";
     right: -1.5rem;
     bottom: 1.5rem;
+  }
+
+  @media (max-width: 750px) {
+    flex-direction: column;
   }
 `;

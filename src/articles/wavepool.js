@@ -1,7 +1,6 @@
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 
-import featureImage from "../assets/images/wavepool-article.jpeg";
-import logoImage from "../assets/images/wavepool-logo.png";
 import { ArticleStyles } from "../styles/article";
 import { LinkButton } from "../styles/button";
 
@@ -9,10 +8,21 @@ export default function WavepoolArticle() {
   const link = "https://wavepoolmag.com/art-study-ivie-akinwumis-surf-world/";
   return (
     <ArticleStyles>
-      <img src={featureImage} alt="wavepool mag" />
+      <StaticImage
+        src="../assets/images/wavepool-article.jpeg"
+        alt="wavepool article picture"
+        placeholder="blurred"
+        className="feature-image"
+      />
       <div className="body">
         <a href={link}>
-          <img src={logoImage} alt="wavepool mag" />
+          <StaticImage
+            src="../assets/images/wavepool-logo.png"
+            alt="wavepool logo"
+            height="50px"
+            placeholder="blurred"
+            className="logo"
+          />
         </a>
 
         <h3>Art Study: Ivie Akinwumi’s work celebrates global surf culture</h3>

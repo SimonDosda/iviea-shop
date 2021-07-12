@@ -1,14 +1,15 @@
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
-import BannerImage from "../assets/images/banner.png";
 
 const HeaderStyled = styled.header`
+  position: absolute;
+  width: 100%;
+  z-index: 100;
   display: flex;
   justify-content: center;
   padding: 1em;
-  position: absolute;
-  width: 100%;
   box-sizing: border-box;
   /* border-bottom: 2px solid var(--primary-4); */
   .content {
@@ -45,7 +46,7 @@ const HeaderStyled = styled.header`
 `;
 
 const BannerStyles = styled.div`
-  img {
+  .banner {
     height: min(300px, calc(50vw));
     width: 100%;
     object-fit: cover;
@@ -67,7 +68,12 @@ export default function Header() {
         </div>
       </HeaderStyled>
       <BannerStyles>
-        <img src={BannerImage} alt="" />
+        <StaticImage
+          src="../assets/images/banner.png"
+          alt="banner"
+          placeholder="blurred"
+          className="banner"
+        />
       </BannerStyles>
     </>
   );
