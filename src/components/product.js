@@ -42,10 +42,7 @@ const ProductStyles = styled.div`
 `;
 
 export default function Product({ product }) {
-  const parseString = (inputString) => {
-    console.log(inputString);
-    return inputString.replace("&#39;", "'");
-  };
+  const parseString = (inputString) => inputString.replace("&#39;", "'");
   return (
     <ProductStyles>
       <a href={product.url}>
