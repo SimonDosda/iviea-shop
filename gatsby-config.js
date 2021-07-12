@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.ivia.com",
+    siteUrl: "https://www.iviea.com",
     title: "Ivie A.",
     description: `Digital Art Prints`,
     author: `Ivie Akinwumi`,
