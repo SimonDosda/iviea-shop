@@ -31,7 +31,7 @@ const HeaderStyled = styled.header`
     display: flex;
     justify-content: flex-end;
     a {
-      padding: 0 20px;
+      margin: 0 20px;
       font-size: 1.2rem;
     }
   }
