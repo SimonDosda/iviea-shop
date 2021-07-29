@@ -2,14 +2,14 @@ import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import Product from "../components/product";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import { ProductsStyles } from "../styles/products";
 import { SectionTitle } from "../styles/title";
 
 const WallArtPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Wall Art" />
+      <Seo title="Wall Art" />
       <section>
         <SectionTitle>Wall Art</SectionTitle>
         <ProductsStyles>

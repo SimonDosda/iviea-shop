@@ -3,7 +3,7 @@ import React from "react";
 import WavepoolArticle from "../articles/wavepool";
 import Layout from "../components/layout";
 import Product from "../components/product";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import { LinkButton } from "../styles/button";
 import { ProductsStyles } from "../styles/products";
 import { SectionTitle } from "../styles/title";
@@ -11,7 +11,7 @@ import { SectionTitle } from "../styles/title";
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
       <section>
         <SectionTitle>Wall Art</SectionTitle>
         <ProductsStyles>
