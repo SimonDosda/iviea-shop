@@ -9,6 +9,10 @@ export const GlobalStyles = createGlobalStyle`
     --text: #211104;
     --header: white;
   }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
   
   a {
     color: var(--primary-4);

@@ -1,5 +1,6 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
+import HerWavesArticle from "../articles/herwaves";
 import WavepoolArticle from "../articles/wavepool";
 import Layout from "../components/layout";
 import Product from "../components/product";
@@ -26,6 +27,7 @@ const IndexPage = ({ data }) => {
 
       <section>
         <SectionTitle>Articles</SectionTitle>
+        <HerWavesArticle />
         <WavepoolArticle />
       </section>
     </Layout>
