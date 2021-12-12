@@ -2,29 +2,35 @@ import React from "react";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const ProductStyles = styled.div`
+const ProductStyles = styled.a`
   position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
 
-  a:hover {
-    color: var(--primary-4);
-  }
-
-  transition: transform 0.2s;
   &:hover {
-    transform: scale(1.1);
+    --d: 0;
+    --p: 0;
+    .title {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
   }
 
   .title {
+    padding: 12px;
     position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 10;
+    bottom: 0;
+    right: 0;
+    left: 0;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
 
     h2 {
-      font-size: 0.8em;
+      font-size: 0.7em;
       margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     p {
       font-size: 0.8em;
@@ -34,7 +40,7 @@ const ProductStyles = styled.div`
 
   .gatsby-image-wrapper {
     width: 100%;
-    max-height: 400px;
+    height: 100%;
     img {
       object-fit: cover;
     }
@@ -44,17 +50,15 @@ const ProductStyles = styled.div`
 export default function Product({ product }) {
   const parseString = (inputString) => inputString.replace("&#39;", "'");
   return (
-    <ProductStyles>
-      <a href={product.url}>
-        <GatsbyImage
-          image={getImage(product.childEtsyListingImage.childFile)}
-          alt={parseString(product.title)}
-        />
-        <div className="title">
-          <h2>{parseString(product.title)}</h2>
-          <p>From ${product.price}</p>
-        </div>
-      </a>
+    <ProductStyles href={product.url}>
+      <GatsbyImage
+        image={getImage(product.childEtsyListingImage.childFile)}
+        alt={parseString(product.title)}
+      />
+      <div className="title">
+        <h2>{parseString(product.title)}</h2>
+        <p>From ${product.price}</p>
+      </div>
     </ProductStyles>
   );
 }
