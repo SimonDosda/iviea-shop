@@ -40,7 +40,7 @@ export default function Layout({ children }) {
       <Typography />
       <Header />
       <Wrapper>
-        <main>{children} </main>
+        <main>{children}</main>
         <Footer />
       </Wrapper>
     </Page>

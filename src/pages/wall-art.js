@@ -2,6 +2,7 @@ import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/layout";
 import Product from "../components/product";
+import ProductDescription from "../components/product-description";
 import Seo from "../components/seo";
 import { ProductsStyles } from "../styles/products";
 import { SectionTitle } from "../styles/title";
@@ -12,6 +13,7 @@ const WallArtPage = ({ data }) => {
       <Seo title="Wall Art" />
       <section>
         <SectionTitle>Wall Art</SectionTitle>
+        <ProductDescription />
         <ProductsStyles>
           {data.allEtsyListing.nodes.map((item) => (
             <Product product={item} key={item.id} />
