@@ -4,6 +4,7 @@ import HerWavesArticle from "../articles/herwaves";
 import WavepoolArticle from "../articles/wavepool";
 import Layout from "../components/layout";
 import Product from "../components/product";
+import ProductDescription from "../components/product-description";
 import Seo from "../components/seo";
 import { LinkButton } from "../styles/button";
 import { ProductsStyles } from "../styles/products";
@@ -15,6 +16,7 @@ const IndexPage = ({ data }) => {
       <Seo title="Home" />
       <section>
         <SectionTitle>Wall Art</SectionTitle>
+        <ProductDescription />
         <ProductsStyles>
           {data.allEtsyListing.nodes.map((item) => (
             <Product product={item} key={item.id} />
